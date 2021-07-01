@@ -1,0 +1,4 @@
+#Wed Jun 30 14:51:34 IST 2021
+base.0=/home/Aakash.g/StudioProjects/flutter_bloc_tutorial/bloc_tutorial_1/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

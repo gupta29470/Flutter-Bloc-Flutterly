@@ -1,0 +1,11 @@
+	Builder(
+              builder: (context) {
+                final counterValue = context.select(
+                    (CounterCubit counterCubit) =>
+                        counterCubit.state.counterValue);
+                return Text(
+                  "$counterValue",
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              },
+            ),

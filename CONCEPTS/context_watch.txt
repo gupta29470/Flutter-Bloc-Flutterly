@@ -1,0 +1,40 @@
+		Builder(
+                  builder: (context) {
+                    final counterState = context.watch<CounterCubit>().state;
+                    final internetState = context.watch<InternetCubit>().state;
+                    return Column(
+                      children: <Widget>[
+                        if (internetState is InternetConnectedState &&
+                            internetState.connectionType == ConnectionType.WiFi)
+                          Text(
+                            "WiFi    ${counterState.counterValue}",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                            ),
+                          )
+                        else if (internetState is InternetConnectedState &&
+                            internetState.connectionType ==
+                                ConnectionType.Mobile)
+                          Text(
+                            "Mobile    ${counterState.counterValue}",
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                            ),
+                          )
+                        else if (internetState is InternetDisconnectedState)
+                          Text(
+                            "Disconnected    ${counterState.counterValue}",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                            ),
+                          )
+                      ],
+                    );
+                  },
+                ),
